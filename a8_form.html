@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--
+    Project Name: JS form for COVID-19 survey
+    Project Description: Solution for Assignment 8
+    Date: 11/21/2022
+    Author: Yuwei Wu 14542827
+-->
+
+<head>
+    <title>COVID-19 Survey BY yw829</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!--Use an External CSS file to decorate the webpage--->
+    <link rel="stylesheet" type="text/css" href="Style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
+    </script>
+
+    <!--Use an External JS file to function the webpage--->
+    <script src="a8_script.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1 class="headertitle">COVID-19 Survey</h1>
+        </div>
+
+    </header>
+
+    <section class="BGcolor clearfix">
+        <div class="container">
+            <p id="headerp">This survey is to collect information about COVID-19 from Drexel's students and employees.
+                The result will help Drexel make better management regarding healthcare. Thank you for your time!</p>
+        </div>
+    </section>
+
+    <section class="BGcolor clearfix">
+        <div class="container">
+            <form name="covidsurvey">
+                <div style="margin-left: 120px;">
+                    <!-- Create a section for Personal Information--->
+                    <h2>Personal Information</h2>
+
+                    <a class="requiredmark">*</a><label for="fname" class="surveytext"> First Name: </label>
+                    <input type="text" name="firstname" id="firstname" class="name" required>
+
+                    <!--#2 Change the color of "required Indicator" to red for All required fields -class="requiredmark"-->
+                    <a class="requiredmark" style="margin-left: 10px;">*</a><label for="lname" class="surveytext"> Last Name: </label>
+                    <input type="text" name="lastname" id="lastname" class="name" required>
+                    <p id="requiredName" class="requiredFields" style="display: none;">*Please fill in your first name & last name</p>
+                    <br>
+
+                    <label for="phone" class="surveytext"> &nbsp;&nbsp;Phone: </label>
+                    <input type="tel" name="tel" id="tel" placeholder="012-345-6789">
+                    <p id="requiredValidPhone" class="requiredFields" style="display: none;">*Please provide a valid phone number</p>
+                    <br>
+
+                    <a class="requiredmark">*</a><label for="email" class="surveytext"> Email: </label>
+                    <input type="email" name="email" id="email" required>
+                    <p id="requiredEmail" class="requiredFields" style="display: none;">*Please fill in your valid email address</p>
+                </div><br><br>
+
+                <div style="margin-left: 120px;">
+                    <!-- Create a section for Vaccine History--->
+                    <h2>Vaccine History</h2>
+                    <a class="requiredmark">*</a><a class="surveyq"> Have you received a COVID-19 vaccine?</a>
+                    <br><br>
+                    <!-- Make two radio selections -Yes and No- to collect required answer. --->
+                    <label class="inputcontainer">
+                        <input type="radio" name="receiveVaccine" value="Yes" id="yesvaccine">
+                        <a class="surveytext">Yes</a>
+                    </label>
+                    <label class="inputcontainer">
+                        <input type="radio" name="receiveVaccine" value="No" style="margin-left: 12px;" id="novaccine">
+                        <a class="surveytext">No</a>
+                    </label>
+
+                    <br><br>
+                    <!-- Make a div of checkbox selections of vaccines when the user has selected yes to the question "Have you received a COVID-19 vaccine?" --->
+                    <div id="yesReceived" style="display: none;">
+                        <p class="surveyq"><a class="requiredmark">*</a>If yes, what vaccine did you receive?</p>
+                        <p id="requiredVaccine" class="requiredFieldsQ" style="display: none;">*Please select the vaccine you have received</p>
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="vaccines" value="Pfizer-BioNTech">
+                            <a class="surveytext">Pfizer-BioNTech</a>
+                        </label><br>
+
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="vaccines" value="Monderna">
+                            <a class="surveytext">Monderna</a>
+                        </label><br>
+
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="vaccines" value="Johnson & Johnson's">
+                            <a class="surveytext">Johnson & Johnson's</a>
+                        </label><br>
+
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="vaccines" value="Novavax">
+                            <a class="surveytext">Novavax</a>
+                        </label><br>
+
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="vaccines" value="Other">
+                            <a class="surveytext">Other</a>
+                        </label><br>
+                    </div>
+                    
+
+                    <br>
+                    <!-- Make a following question when the user has selected no to the question "Have you received a COVID-19 vaccine?" --->
+                    <div id="noReceived" style="display: none;">
+                        <p class="surveyq" ><a class="requiredmark">*</a>If no, do you plan to receive the COVID-19 vcaccine?</p>
+                        <p id="requiredVaccinePlan" class="requiredFieldsQ" style="display: none;">*Please select an answer</p>
+                        
+                        <label class="inputcontainer">
+                            <input type="radio" name="noreceiveVaccine" value="Yes">
+                            <a class="surveytext">Yes</a>
+                        </label>
+                        <label class="inputcontainer">
+                            <input type="radio" name="noreceiveVaccine" value="No" style="margin-left: 12px;">
+                            <a class="surveytext">No</a>
+                        </label>
+                    </div>
+                    
+                </div>
+
+                <br><br>
+                <div style="margin-left: 120px;">
+                    <!-- Create a section for Medical Condition--->
+                    <h2>Medical Condition</h2>
+
+                    <!-- Make two required radio selections to ask for COVID-19 sympton --->
+                    <a class="requiredmark">*</a><a class="surveyq"> Are you currently experiencing any COVID-19 symptons?</a><br><br>
+
+                    <label class="inputcontainer">
+                        <input type="radio" name="havingSymptons" value="Yes" id="havingSymptons">
+                        <a class="surveytext">Yes</a>
+                    </label>
+                    <label class="inputcontainer">
+                        <input type="radio" name="havingSymptons" value="No" style="margin-left: 12px;" id="noHavingSymptons">
+                        <a class="surveytext">No</a>
+                    </label>
+                    <br><br>
+
+                    <!-- Make checkbox selections to collect current symptoms when the user has selected yes to the question "Are you currently experiencing any COVID-19 symptons?"--->
+                    <div id="yesSymptons" style="display: none;">
+                        <p class="surveyq"><a class="requiredmark">*</a>If yes, please select your symptons below</p>
+                        <p id="requiredSymptons" class="requiredFieldsQ" style="display: none;">*Please select the symptons you are experiencing</p>
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="symptons" value="Fever or chills">
+                            <a class="surveytext">Fever or chills</a>
+                        </label><br>
+    
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="symptons" value="Cough">
+                            <a class="surveytext">Cough</a>
+                        </label><br>
+    
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="symptons" value="Shortness of breath or difficulty breathing">
+                            <a class="surveytext">Shortness of breath or difficulty breathing</a>
+                        </label><br>
+    
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="symptons" value="Fatigue">
+                            <a class="surveytext">Fatigue</a>
+                        </label><br>
+    
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="symptons" value="Muscle or body aches">
+                            <a class="surveytext">Muscle or body aches</a>
+                        </label><br>
+    
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="symptons" value="Headache">
+                            <a class="surveytext">Headache</a>
+                        </label><br>
+    
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="symptons" value="New loss of taste or smell">
+                            <a class="surveytext">New loss of taste or smell</a>
+                        </label><br>
+    
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="symptons" value="Congestion or runny nose">
+                            <a class="surveytext">Congestion or runny nose</a>
+                        </label><br>
+    
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="symptons" value="Nausea or vomiting">
+                            <a class="surveytext">Nausea or vomiting</a>
+                        </label><br>
+    
+                        <label class="inputcontainer">
+                            <input type="checkbox" name="symptons" value="Diarrhea">
+                            <a class="surveytext">Diarrhea</a>
+                        </label><br>
+                    </div>
+                </div>
+                <br><br>
+                <div style="margin-left: 120px;">
+                    <!-- Make three required radio selections to ask for close contact status--->
+                    <a class="requiredmark">*</a><a class="surveyq"> Have you been in close contact with someone who has
+                        been diagosed COVID-19?</a>
+                    <P><a href="https://www.cdc.gov/coronavirus/2019-ncov/php/contact-tracing/contact-tracing-plan/appendix.html#con."
+                            class="closecontactlink">Click here for more info about close contact</a></P>
+
+                    <label class="inputcontainer">
+                        <input type="radio" name="closecontact" value="Yes">
+                        <a class="surveytext">Yes</a>
+                    </label>
+                    <label class="inputcontainer">
+                        <input type="radio" name="closecontact" value="No" style="margin-left: 12px;">
+                        <a class="surveytext">No</a>
+                    </label>
+
+                    <label class="inputcontainer">
+                        <input type="radio" name="closecontact" value="Not sure" style="margin-left: 12px;">
+                        <a class="surveytext">Not sure</a>
+                    </label>
+                </div>
+
+                <br><br><br>
+
+                <div style="margin-left: 120px;">
+                    <!-- Use input element to make a button to clear all answers--->
+                    <input type="image" src="submit.png" alt="submit" width="10%" id="submit" onclick="return receipt()">
+                    <!-- Make button to submit the form by checking if all required information are answered.
+                            Use src attribute to make the submit button appear as an image.--->
+                    <input type="image" src="clear.png" alt="reset" width="10%" style="margin-left: 10px;">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="BGcolor clearfix">
+        <div class="container">
+            <div>
+                <p class="copyright">&copy; 2022 Yuwei Wu. All rights reserved.</p>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

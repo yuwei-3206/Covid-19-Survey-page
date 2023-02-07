@@ -1,0 +1,204 @@
+
+    /*<------------------General-------------------->*/
+
+    body{
+        margin: 0;
+    }
+
+    section, footer {
+        padding: 8px 0;
+
+        position: relative;
+        z-index: 1;
+    }
+    
+    .BGcolor {
+        background-color: #f9f9f9;
+    }
+
+    .clearfix{
+        clear: both;
+    }
+    .container {
+        width: 1000px;
+        margin: auto;
+    }
+    
+    /*<------------------Head context deco-------------------->*/
+
+    header {
+        box-shadow: 0 5px 3px #CCCCCC;
+        padding: 10px 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    .headertitle {
+        font-size: 20pt; 
+        color:#4A707A;
+        font-family: Georgia, 'Times New Roman', Times, serif; 
+        text-align: center;
+    }
+
+    #headerp {
+        width: 70%;
+        margin-left: 15%;
+        padding: 10px 0;
+        font-size: 15px;
+        color:dimgrey;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+    }
+
+    /*<------------------Required Indicator-------------------->*/
+    .requiredFields{
+        font-size: 12px;
+        font-family:Arial, Helvetica, sans-serif;
+        color: red;
+        margin-top: -1px;
+        margin-left: 100px;
+    }
+
+    .requiredFieldsQ{
+        font-size: 12px;
+        font-family:Arial, Helvetica, sans-serif;
+        color: red;
+        margin-top: -3px;
+    }
+
+    /*#2 Change the color of "required Indicator" to red for All required fields -class="requiredmark"*/
+    .requiredmark{
+        font-size: 16px;
+        color: red;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /*<-----------------Perosonal Information deco-------------------->*/
+
+    input[type=text], select {
+        width: 15%;
+        padding: 10px 6px;
+        margin: 8px 8px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type=tel], select {
+        width: 44%;
+        padding: 10px 6px;
+        margin: 8px 39.5px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    input[type=email], select {
+        width: 44%;
+        padding: 10px 6px;
+        margin: 8px 43px;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .form-control::placeholder {
+        color: #f9f9f9;
+    }
+
+    /*.name{
+        text-transform: capitalize;
+    }
+
+    /*<-----------------Vaccine History & Medical Condition deco-------------------->*/
+    /*--checkmark--*/
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #ccc;
+        border-radius: 50%;
+    }
+    
+    /*--input--*/
+    .inputcontainer:hover input ~ .checkmark {
+        background-color: #ccc;
+    }
+
+    .inputcontainer input:checked ~ .checkmark {
+        background-color: #2196F3;
+    }
+      
+    .inputcheckmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    .inputcontainer input:checked ~ .checkmark:after {
+        display: block;
+    }
+      
+    .inputcontainer .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+    }
+
+    /*--contexts--*/
+    .surveyq{
+        font-size: 16px;
+        color: #58595B;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .surveytext{
+        font-size: 15px;
+        color: #58595B;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    
+
+    
+    /*<-----------------Medical Condition link-------------------->*/
+    .closecontactlink{
+        font-size: 10pt; 
+        font-family: Arial, Helvetica, sans-serif; 
+        font-weight: lighter; 
+        color: #439594;
+    }
+
+    .closecontactlink:hover{
+        color: salmon;
+    }
+
+    /*<-----------------Other-------------------->*/
+
+    h2{
+        font-size: 20px;
+        color: #4A707A;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    
+    hr {
+        color: #CCCCCC;
+        margin-top: 4%;
+        width: 100%;
+    }
+
+    .copyright {
+
+        font-size: 9pt;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #c2c8c5;
+        text-align: center;
+    }
