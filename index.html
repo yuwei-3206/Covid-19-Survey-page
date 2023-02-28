@@ -2,10 +2,10 @@
 <html lang="en">
 
 <!--
-    Project Name: JS form for COVID-19 survey
-    Project Description: Solution for Assignment 8
+    Project Name: COVID-19 survey
+    Project Description: Ask the user some questions about the Covid-19 and get the information. Using HTML5, CSS3, JavaScript and JQuery.
     Date: 11/21/2022
-    Author: Yuwei Wu 14542827
+    Author: Yuwei Wu
 -->
 
 <head>
@@ -44,13 +44,14 @@
         <div class="container">
             <form name="covidsurvey">
                 <div style="margin-left: 120px;">
+                    
                     <!-- Create a section for Personal Information--->
                     <h2>Personal Information</h2>
 
                     <a class="requiredmark">*</a><label for="fname" class="surveytext"> First Name: </label>
                     <input type="text" name="firstname" id="firstname" class="name" required>
 
-                    <!--#2 Change the color of "required Indicator" to red for All required fields -class="requiredmark"-->
+                    <!--Change the color of "required Indicator" to red for All required fields -class="requiredmark"-->
                     <a class="requiredmark" style="margin-left: 10px;">*</a><label for="lname" class="surveytext"> Last Name: </label>
                     <input type="text" name="lastname" id="lastname" class="name" required>
                     <p id="requiredName" class="requiredFields" style="display: none;">*Please fill in your first name & last name</p>
@@ -67,10 +68,12 @@
                 </div><br><br>
 
                 <div style="margin-left: 120px;">
+                    
                     <!-- Create a section for Vaccine History--->
                     <h2>Vaccine History</h2>
                     <a class="requiredmark">*</a><a class="surveyq"> Have you received a COVID-19 vaccine?</a>
                     <br><br>
+                    
                     <!-- Make two radio selections -Yes and No- to collect required answer. --->
                     <label class="inputcontainer">
                         <input type="radio" name="receiveVaccine" value="Yes" id="yesvaccine">
@@ -82,6 +85,7 @@
                     </label>
 
                     <br><br>
+                    
                     <!-- Make a div of checkbox selections of vaccines when the user has selected yes to the question "Have you received a COVID-19 vaccine?" --->
                     <div id="yesReceived" style="display: none;">
                         <p class="surveyq"><a class="requiredmark">*</a>If yes, what vaccine did you receive?</p>
@@ -114,6 +118,7 @@
                     
 
                     <br>
+                    
                     <!-- Make a following question when the user has selected no to the question "Have you received a COVID-19 vaccine?" --->
                     <div id="noReceived" style="display: none;">
                         <p class="surveyq" ><a class="requiredmark">*</a>If no, do you plan to receive the COVID-19 vcaccine?</p>
@@ -133,6 +138,7 @@
 
                 <br><br>
                 <div style="margin-left: 120px;">
+                    
                     <!-- Create a section for Medical Condition--->
                     <h2>Medical Condition</h2>
 
@@ -206,6 +212,7 @@
                 </div>
                 <br><br>
                 <div style="margin-left: 120px;">
+                    
                     <!-- Make three required radio selections to ask for close contact status--->
                     <a class="requiredmark">*</a><a class="surveyq"> Have you been in close contact with someone who has
                         been diagosed COVID-19?</a>
@@ -230,8 +237,10 @@
                 <br><br><br>
 
                 <div style="margin-left: 120px;">
+                    
                     <!-- Use input element to make a button to clear all answers--->
                     <input type="image" src="submit.png" alt="submit" width="10%" id="submit" onclick="return receipt()">
+                    
                     <!-- Make button to submit the form by checking if all required information are answered.
                             Use src attribute to make the submit button appear as an image.--->
                     <input type="image" src="clear.png" alt="reset" width="10%" style="margin-left: 10px;">
