@@ -1,5 +1,5 @@
 
-// #1 Show a following required question depends on the answer that the user gave from the question "Have you received a COVID-19 vaccine?"
+//Show a following required question when the user chose "yes" from the question "Have you received a COVID-19 vaccine?"
 $(document).ready(function(){
     $("#yesvaccine").click(function() { 
       $("#yesReceived").css("display", "block");
@@ -11,7 +11,7 @@ $(document).ready(function(){
       $("#noReceived").css("display", "block");
     });
 
-    // Show a following required question depends on the answer that the user gave from the question " Are you currently experiencing any COVID-19 symptons?"
+    // Show a following required question when the user chose "yes" from the question " Are you currently experiencing any COVID-19 symptons?"
     $("#havingSymptons").click(function() { 
       $("#yesSymptons").css("display", "block");
     });
@@ -21,14 +21,14 @@ $(document).ready(function(){
     });
 });
 
-// #4 Check and show a warning message when the email provided by user is not in a valid format
+//Check and show a warning message when the email provided by user is not in a valid format
 
 function validateEmail($email) {
     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     return emailReg.test( $email );
 }
 
-// #5  Check and show a warning message when the phone provided by user is not with digits/in incorrect format
+//Check and show a warning message when the phone provided by user is not with digits/in incorrect format
 function validatePhone($tel) {
     var phoneReg = /\(?([0-9]{3})\)?([-]?)([0-9]{3})\2([0-9]{4})/;
     return phoneReg.test( $tel );
@@ -42,7 +42,7 @@ function validateInfo() {
 
     var Boolean = true;
 
-    // #3 Show warning messages below non-filled required fields or incorrect filled fields to remind the user that they're not filled or invalid
+    //Show warning messages below non-filled required fields or incorrect filled fields to remind the user that they're not filled or invalid
     if (firstname == "" || lastname == "") {
         $("#requiredName").css("display", "block");
         Boolean = false;
@@ -58,7 +58,7 @@ function validateInfo() {
         Boolean = false;
     }
 
-    // Show an alert to remind the user when required fields are not filled
+    //Show an alert to remind the user when required fields are not filled
     if (firstname == "" || lastname == "" || email == "" || !$("input[name='receiveVaccine']").is(":checked") || !$("input[name='havingSymptons']").is(":checked") || !$("input[name='closecontact']").is(":checked") || $("[name='receiveVaccine']:checked").val() == "Yes" && !$("input[name='vaccines']").is(":checked") || $("[name='receiveVaccine']:checked").val() == "No" && !$("input[name='noreceiveVaccine']").is(":checked") || $("[name='havingSymptons']:checked").val() == "Yes" && !$("input[name='symptons']").is(":checked") || !tel == "" && !validatePhone(tel)) {
         alert("You must answer the (*)requried fields before submit");
         Boolean = false;
@@ -103,6 +103,7 @@ function getPersonalInfo() {
     return print;
 }
 
+//Get all input values from the user
 function getVaccine(){
     var receiveVaccine = document.covidsurvey.receiveVaccine;
     var print = "";
@@ -185,7 +186,7 @@ function getMedicalCloseContact(){
     return print;
 }
 
-// When all required fields are answered/selected, print out all received information on a page once the submit button is clicked. 
+//When all required fields are answered/selected, print out all received information on a page once the submit button is clicked. 
 function receipt() {
     if (!validateInfo()) { return false; }
 
